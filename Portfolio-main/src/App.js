@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -10,6 +10,62 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Services from './components/Services';
 import Education from './components/Education';
+
+// Custom Cursor Component
+function CustomCursor() {
+  const cursorRef = useRef(null);
+  const [hovered, setHovered] = useState(false);
+  const [clicked, setClicked] = useState(false);
+
+  useEffect(() => {
+    // Add class to body to hide default cursor
+    document.body.classList.add('custom-cursor-enabled');
+    return () => {
+      document.body.classList.remove('custom-cursor-enabled');
+    };
+  }, []);
+
+  useEffect(() => {
+    const moveCursor = (e) => {
+      if (cursorRef.current) {
+        cursorRef.current.style.left = `${e.clientX}px`;
+        cursorRef.current.style.top = `${e.clientY}px`;
+      }
+    };
+    const handleMouseDown = () => setClicked(true);
+    const handleMouseUp = () => setClicked(false);
+    const handleMouseOver = (e) => {
+      if (e.target.closest('a,button,[role="button"],input,textarea,select,label')) {
+        setHovered(true);
+      }
+    };
+    const handleMouseOut = (e) => {
+      if (e.target.closest('a,button,[role="button"],input,textarea,select,label')) {
+        setHovered(false);
+      }
+    };
+    document.addEventListener('mousemove', moveCursor);
+    document.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener('mouseover', handleMouseOver);
+    document.addEventListener('mouseout', handleMouseOut);
+    return () => {
+      document.removeEventListener('mousemove', moveCursor);
+      document.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('mouseover', handleMouseOver);
+      document.removeEventListener('mouseout', handleMouseOut);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={cursorRef}
+      className={`custom-cursor${hovered ? ' cursor-hover' : ''}${clicked ? ' cursor-click' : ''}`}
+      aria-hidden="true"
+    />
+  );
+}
 
 function App() {
   // We're only keeping track of active section now, removed darkMode state
@@ -57,6 +113,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <CustomCursor />
       <div className="min-h-screen bg-black text-white relative">
         {/* Background gradients */}
         <div className="fixed inset-0 z-0 overflow-hidden">
