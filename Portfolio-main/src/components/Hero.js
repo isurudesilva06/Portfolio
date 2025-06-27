@@ -203,7 +203,7 @@ const Hero = () => {
 
                             {/* Floating skill badges with glassmorphism */}
                             <div className="hero-badge left absolute -bottom-4 -left-4 px-4 py-2 rounded-full bg-[#0c0c20]/80 backdrop-blur-md border border-white/10 text-white text-sm shadow-lg shadow-purple-500/10">
-                                Product Designer
+                                Developer
                             </div>
                             <div className="hero-badge right absolute -top-4 -right-4 px-4 py-2 rounded-full bg-[#0c0c20]/80 backdrop-blur-md border border-white/10 text-white text-sm shadow-lg shadow-purple-500/10">
                                 UI/UX Designer
@@ -218,17 +218,17 @@ const Hero = () => {
                 className={`w-full absolute bottom-0 left-0 overflow-hidden transition-all duration-1000 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}
                 style={{ transitionDelay: '0.6s' }}
             >
-                <div className="relative py-2 sm:py-3 md:py-4 bg-gradient-to-r from-pink-500/80 via-purple-500/80 to-indigo-500/80 backdrop-blur-sm border-t border-white/10">
+                <div className="relative py-2 sm:py-3 md:py-4 bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] backdrop-blur-sm border-t border-white/10">
                     <div className="flex whitespace-nowrap overflow-hidden">
                         {/* First line of text */}
                         <div className="animate-marquee whitespace-nowrap flex items-center">
                             {Array(10).fill().map((_, i) => (
                                 <span key={i} className="inline-flex items-center mx-4">
-                                    <span className="text-white/90 text-xs sm:text-sm font-medium">PIXEL-PERFECT PRECISION</span>
+                                    <span className="text-white text-xs sm:text-sm font-medium">PIXEL-PERFECT PRECISION</span>
                                     <span className="mx-2 sm:mx-4 text-white/70">•</span>
-                                    <span className="text-white/90 text-xs sm:text-sm font-medium">CREATIVE PROBLEM-SOLVING</span>
+                                    <span className="text-white text-xs sm:text-sm font-medium">CREATIVE PROBLEM-SOLVING</span>
                                     <span className="mx-2 sm:mx-4 text-white/70">•</span>
-                                    <span className="text-white/90 text-xs sm:text-sm font-medium">RESPONSIVE DESIGN</span>
+                                    <span className="text-white text-xs sm:text-sm font-medium">RESPONSIVE DESIGN</span>
                                     <span className="mx-2 sm:mx-4 text-white/70">•</span>
                                 </span>
                             ))}
@@ -237,11 +237,11 @@ const Hero = () => {
                         <div className="animate-marquee whitespace-nowrap flex items-center">
                             {Array(10).fill().map((_, i) => (
                                 <span key={`dup-${i}`} className="inline-flex items-center mx-4">
-                                    <span className="text-white/90 text-xs sm:text-sm font-medium">PIXEL-PERFECT PRECISION</span>
+                                    <span className="text-white text-xs sm:text-sm font-medium">PIXEL-PERFECT PRECISION</span>
                                     <span className="mx-2 sm:mx-4 text-white/70">•</span>
-                                    <span className="text-white/90 text-xs sm:text-sm font-medium">CREATIVE PROBLEM-SOLVING</span>
+                                    <span className="text-white text-xs sm:text-sm font-medium">CREATIVE PROBLEM-SOLVING</span>
                                     <span className="mx-2 sm:mx-4 text-white/70">•</span>
-                                    <span className="text-white/90 text-xs sm:text-sm font-medium">RESPONSIVE DESIGN</span>
+                                    <span className="text-white text-xs sm:text-sm font-medium">RESPONSIVE DESIGN</span>
                                     <span className="mx-2 sm:mx-4 text-white/70">•</span>
                                 </span>
                             ))}
