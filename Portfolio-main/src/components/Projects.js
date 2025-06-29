@@ -120,54 +120,7 @@ const Projects = () => {
             liveLink: "#",
             githubLink: "#"
         },
-        {
-            id: 10,
-            title: "EVENT EDGE",
-            subtitle: "Home Enterprises",
-            category: "E-Commerce",
-            type: "uiux",
-            image: "/assets/img/dashboard.png",
-            description: "Home appliances e-commerce store with modern user interface.",
-            technologies: ["Figma", "Adobe Photoshop"],
-            liveLink: "#",
-            githubLink: "#"
-        },
-        {
-            id: 11,
-            title: "EPICUREAN DELIGHT",
-            subtitle: "Home Enterprises",
-            category: "E-Commerce",
-            type: "uiux",
-            image: "/assets/img/hotel.png",
-            description: "Home appliances e-commerce store with modern user interface.",
-            technologies: ["Figma", "Adobe Photoshop"],
-            liveLink: "#",
-            githubLink: "#"
-        },
-        {
-            id: 12,
-            title: "TROPICAL WATER",
-            subtitle: "Home Enterprises",
-            category: "E-Commerce",
-            type: "uiux",
-            image: "/assets/img/water.png",
-            description: "Home appliances e-commerce store with modern user interface.",
-            technologies: ["Figma", "Adobe Photoshop"],
-            liveLink: "#",
-            githubLink: "#"
-        },
-        {
-            id: 13,
-            title: "FOREST HAVEN",
-            subtitle: "Home Enterprises",
-            category: "E-Commerce",
-            type: "uiux",
-            image: "/assets/img/forest.png",
-            description: "Home appliances e-commerce store with modern user interface.",
-            technologies: ["Figma", "Adobe Photoshop"],
-            liveLink: "#",
-            githubLink: "#"
-        },
+        
 
     ];
 

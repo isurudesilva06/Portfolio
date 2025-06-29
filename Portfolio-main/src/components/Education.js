@@ -96,7 +96,7 @@ const EducationExperience = () => {
                                         G.C.E. Advanced Level
                                     </h4>
                                     <p className="text-gray-400 mb-2">
-                                        Sujatha Vidalaya, Nugegoda
+                                    S Thomas` Collage - Bandarawela 
                                     </p>
                                     <p className="text-sm text-gray-500">
                                         2018-2021
