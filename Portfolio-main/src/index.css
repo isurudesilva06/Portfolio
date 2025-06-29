@@ -144,3 +144,21 @@ body.custom-cursor-enabled label {
   box-shadow: 0 8px 24px 0 rgba(25, 118, 210, 0.15), 0 1.5px 6px 0 rgba(0,0,0,0.08);
   filter: brightness(1.08);
 }
+
+/* Animated Gradient Text */
+@keyframes animated-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+.animated-gradient-text {
+  background: linear-gradient(90deg, #1a237e, #1976d2, #263238, #1a237e);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: animated-gradient 3s linear infinite alternate;
+}

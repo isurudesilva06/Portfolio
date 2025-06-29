@@ -88,7 +88,7 @@ const About = () => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col items-center text-center">
                     {/* Responsive title with adjusted sizing */}
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] bg-clip-text text-transparent">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 animated-gradient-text">
                         Who Am I
                     </h2>
 

@@ -149,9 +149,7 @@ const Hero = () => {
                         {/* Heading with modern typography */}
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 leading-tight">
                             <span className="text-white">I'm </span>
-                            <span className="hero-name animate-gradient bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] bg-clip-text text-transparent animate-gradient-move">
-                                Isuru Nipun
-                            </span>
+                            <span className="animated-gradient-text">Isuru Nipun</span>
                         </h1>
 
                         {/* Typewriter Effect for roles */}
@@ -162,7 +160,7 @@ const Hero = () => {
 
                         {/* Description with gradient text highlights */}
                         <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 md:mb-10 max-w-2xl leading-relaxed">
-                            Transforming ideas into <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1a237e] to-[#263238] animate-gradient-move">exceptional digital experiences</span> through creative design and innovative development.
+                            Transforming ideas into <span className="animated-gradient-text">exceptional digital experiences</span> through creative design and innovative development.
                         </p>
 
                         {/* CTA Buttons */}
