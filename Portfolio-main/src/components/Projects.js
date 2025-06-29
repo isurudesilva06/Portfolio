@@ -237,7 +237,7 @@ const Projects = () => {
                                         <img
                                             src={project.image}
                                             alt={project.title}
-                                            className={imgClass}
+                                            className={imgClass + ' float-parallax'}
                                             onError={handleImageError}
                                             onLoad={e => handleImageLoad(e, project.id)}
                                         />

@@ -144,7 +144,7 @@ const Contact = () => {
 
     // Render contact information card with technical style
     const ContactCard = ({ icon, title, value, accent }) => (
-        <div className="flex items-center p-6 rounded-xl bg-white/[0.03] backdrop-blur-sm border border-white/10 transition-all hover:border-white/20 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#8B5CF6]/5 duration-300">
+        <div className="flex items-center p-6 rounded-xl bg-white/[0.03] backdrop-blur-sm border border-white/10 transition-all hover:border-white/20 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#8B5CF6]/5 duration-300 card-animate">
             <div className={`flex items-center justify-center w-12 h-12 rounded-xl mr-4 bg-gradient-to-br ${accent}`}>
                 {icon}
             </div>

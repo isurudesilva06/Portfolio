@@ -162,3 +162,14 @@ body.custom-cursor-enabled label {
   color: transparent;
   animation: animated-gradient 3s linear infinite alternate;
 }
+
+/* Card Hover Animation */
+.card-animate {
+  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0,0.2,1), border 0.2s;
+}
+.card-animate:hover, .card-animate:focus {
+  transform: scale(1.035) translateY(-6px) rotateZ(-0.5deg);
+  box-shadow: 0 12px 32px 0 rgba(25, 118, 210, 0.18), 0 2px 8px 0 rgba(0,0,0,0.10);
+  border-color: #1976d2 !important;
+  z-index: 2;
+}

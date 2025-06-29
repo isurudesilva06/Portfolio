@@ -458,7 +458,7 @@ const ProjectDetails = () => {
                                     scale: 1.03,
                                     boxShadow: "0 0 20px rgba(188, 80, 255, 0.2)"
                                 }}
-                                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-5 hover:border-[#1976d2]/50 transition-all duration-300"
+                                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-5 hover:border-[#1976d2]/50 transition-all duration-300 card-animate"
                             >
                                 <div className="flex items-start">
                                     <div className="flex-shrink-0 mr-4">
@@ -580,7 +580,7 @@ const ProjectDetails = () => {
                             .map(related => (
                                 <div
                                     key={related.id}
-                                    className="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 transition-all duration-300 hover:border-white/20 hover:shadow-xl hover:shadow-purple-500/10 cursor-pointer"
+                                    className="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 transition-all duration-300 hover:border-white/20 hover:shadow-xl hover:shadow-purple-500/10 cursor-pointer card-animate"
                                     onClick={() => navigate(`/project/${related.id}`)}
                                 >
                                     {/* Project Image */}
