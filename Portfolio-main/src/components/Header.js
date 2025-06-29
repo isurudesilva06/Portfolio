@@ -58,7 +58,7 @@ const Header = ({ darkMode, toggleDarkMode, activeSection, isProjectPage = false
                                 <button
                                     key={item.name}
                                     onClick={() => scrollToSection(item.section)}
-                                    className={`px-3 py-2 text-sm font-medium transition-colors duration-200 
+                                    className={`px-3 py-2 text-sm font-medium transition-colors duration-200 button-animate \
                                         ${activeSection === item.section && !isProjectPage
                                             ? 'bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] bg-clip-text text-transparent'
                                             : darkMode !== false ? 'text-white hover:text-gray-300' : 'text-gray-800 hover:text-gray-600'
@@ -72,7 +72,7 @@ const Header = ({ darkMode, toggleDarkMode, activeSection, isProjectPage = false
                         {/* Contact Button - Now part of the centered container */}
                         <button
                             onClick={() => scrollToSection('contact')}
-                            className="px-6 py-2 bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] text-white rounded-full hover:opacity-90 transition-opacity duration-200 font-medium whitespace-nowrap"
+                            className="px-6 py-2 bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] text-white rounded-full hover:opacity-90 transition-opacity duration-200 font-medium whitespace-nowrap button-animate"
                         >
                             Contact Me
                         </button>
@@ -82,7 +82,7 @@ const Header = ({ darkMode, toggleDarkMode, activeSection, isProjectPage = false
                     <div className="md:hidden">
                         <button
                             onClick={toggleMenu}
-                            className={`inline-flex items-center justify-center p-2 rounded-md ${textColor} ${hoverColor} focus:outline-none`}
+                            className={`inline-flex items-center justify-center p-2 rounded-md ${textColor} ${hoverColor} focus:outline-none button-animate`}
                         >
                             <svg
                                 className="h-6 w-6"
@@ -124,9 +124,10 @@ const Header = ({ darkMode, toggleDarkMode, activeSection, isProjectPage = false
                             <button
                                 key={item.name}
                                 onClick={() => scrollToSection(item.section)}
-                                className={`block px-3 py-2 rounded-md text-base font-medium w-full text-center ${activeSection === item.section && !isProjectPage
-                                    ? 'bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] bg-clip-text text-transparent'
-                                    : darkMode !== false ? 'text-black hover:text-gray-300' : 'text-gray-800 hover:text-gray-600'
+                                className={`block px-3 py-2 rounded-md text-base font-medium w-full text-center button-animate \
+                                    ${activeSection === item.section && !isProjectPage
+                                        ? 'bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] bg-clip-text text-transparent'
+                                        : darkMode !== false ? 'text-black hover:text-gray-300' : 'text-gray-800 hover:text-gray-600'
                                     }`}
                             >
                                 {item.name}
@@ -134,7 +135,7 @@ const Header = ({ darkMode, toggleDarkMode, activeSection, isProjectPage = false
                         ))}
                         <button
                             onClick={() => scrollToSection('contact')}
-                            className="block w-full text-center mt-3 px-3 py-2 bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] text-white rounded-full hover:opacity-90 transition-opacity duration-200 font-medium"
+                            className="block w-full text-center mt-3 px-3 py-2 bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] text-white rounded-full hover:opacity-90 transition-opacity duration-200 font-medium button-animate"
                         >
                             Contact Me
                         </button>

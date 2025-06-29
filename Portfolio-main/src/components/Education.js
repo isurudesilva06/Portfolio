@@ -1,6 +1,18 @@
 import React, { useEffect } from 'react';
 
 const EducationExperience = () => {
+    const [isVisible, setIsVisible] = React.useState(false);
+    const educationRef = React.useRef(null);
+
+    React.useEffect(() => {
+        const observer = new window.IntersectionObserver(
+            ([entry]) => setIsVisible(entry.isIntersecting),
+            { threshold: 0.2 }
+        );
+        if (educationRef.current) observer.observe(educationRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     // Add the flow animation keyframes to the document only once
     useEffect(() => {
         if (!document.getElementById('flow-animation-style')) {
@@ -34,7 +46,7 @@ const EducationExperience = () => {
     }, []);
 
     return (
-        <section className="py-16 sm:py-20 md:py-24 relative">
+        <section ref={educationRef} className={`py-16 sm:py-20 md:py-24 relative transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="absolute inset-0 pointer-events-none">
                 {[...Array(50)].map((_, i) => (
                     <div

@@ -356,7 +356,7 @@ const Contact = () => {
                                                 className="w-full py-3.5 px-4 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium 
                                                 hover:from-indigo-500 hover:to-purple-500 transition-all duration-300 transform hover:translate-y-[-2px] hover:shadow-lg 
                                                 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:ring-offset-2 focus:ring-offset-[#0F172A] 
-                                                disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center"
+                                                disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center button-animate"
                                             >
                                                 {formStatus.status === 'submitting' ? (
                                                     <>

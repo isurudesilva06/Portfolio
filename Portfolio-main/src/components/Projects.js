@@ -1,5 +1,5 @@
 // Live Demo
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Projects = () => {
@@ -8,6 +8,8 @@ const Projects = () => {
     const navigate = useNavigate();
     // Track aspect ratios for images
     const [aspectRatios, setAspectRatios] = useState({});
+    const [isVisible, setIsVisible] = useState(false);
+    const projectsRef = useRef(null);
 
     // Project data with unique IDs and updated for portfolio style
     const projects = [
@@ -172,8 +174,17 @@ const Projects = () => {
         }));
     };
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => setIsVisible(entry.isIntersecting),
+            { threshold: 0.2 }
+        );
+        if (projectsRef.current) observer.observe(projectsRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section id="work" className="py-12 sm:py-16 md:py-20 transition-colors duration-300">
+        <section id="work" ref={projectsRef} className={`py-12 sm:py-16 md:py-20 transition-colors duration-300 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Responsive Title Section */}
                 <div className="mb-12 sm:mb-16 md:mb-20 text-center">
@@ -193,11 +204,11 @@ const Projects = () => {
                             <button
                                 key={cat.key}
                                 onClick={() => setSelectedCategory(cat.key)}
-                                className={`px-6 sm:px-8 py-2 text-sm sm:text-base font-medium rounded-full transition-all duration-300
+                                className={`px-6 sm:px-8 py-2 text-sm sm:text-base font-medium rounded-full transition-all duration-300 button-animate
                                     ${selectedCategory === cat.key
                                         ? 'text-white bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] shadow-lg'
-                                        : 'text-gray-300 hover:text-white border border-gray-700 hover:border-gray-500 bg-white/5'}
-                                `}
+                                        : 'text-gray-300 hover:text-white border border-gray-700 hover:border-gray-500 bg-white/5'
+                                    }`}
                             >
                                 {cat.label}
                             </button>

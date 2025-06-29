@@ -53,8 +53,20 @@ const About = () => {
         return () => clearInterval(intervalId);
     }, []);
 
+    const [isVisible, setIsVisible] = useState(false);
+    const aboutRef = React.useRef(null);
+
+    React.useEffect(() => {
+        const observer = new window.IntersectionObserver(
+            ([entry]) => setIsVisible(entry.isIntersecting),
+            { threshold: 0.2 }
+        );
+        if (aboutRef.current) observer.observe(aboutRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section id="about" className="min-h-screen text-white relative py-12 md:py-16 lg:py-20 ">
+        <section id="about" ref={aboutRef} className={`min-h-screen text-white relative py-12 md:py-16 lg:py-20 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {renderDecorationDots()}
 
             <div className="absolute inset-0 pointer-events-none">

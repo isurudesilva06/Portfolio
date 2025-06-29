@@ -7,6 +7,10 @@ const ServicesSection = () => {
     // State to store random positions for tags
     const [tagPositions, setTagPositions] = useState({});
 
+    // State to track visibility of the services section
+    const [isVisible, setIsVisible] = useState(false);
+    const servicesRef = React.useRef(null);
+
     // Memoize the services data so it doesn't change on every render
     const services = useMemo(() => [
         {
@@ -82,10 +86,17 @@ const ServicesSection = () => {
         }
     }, [hoveredService, services]);
 
+    React.useEffect(() => {
+        const observer = new window.IntersectionObserver(
+            ([entry]) => setIsVisible(entry.isIntersecting),
+            { threshold: 0.2 }
+        );
+        if (servicesRef.current) observer.observe(servicesRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section id="services" className="min-h-screen text-white relative overflow-hidden"
-            style={{ marginTop: -50 }}
-        >
+        <section id="services" ref={servicesRef} className={`min-h-screen text-white relative overflow-hidden transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ marginTop: -50 }}>
             {/* Background particles/dots */}
             <div className="absolute inset-0 pointer-events-none">
                 {[...Array(50)].map((_, i) => (

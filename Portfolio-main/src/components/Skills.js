@@ -130,10 +130,20 @@ const Skills = () => {
         </div>
     );
 
+    const [isVisible, setIsVisible] = React.useState(false);
+    const skillsRef = React.useRef(null);
+
+    React.useEffect(() => {
+        const observer = new window.IntersectionObserver(
+            ([entry]) => setIsVisible(entry.isIntersecting),
+            { threshold: 0.2 }
+        );
+        if (skillsRef.current) observer.observe(skillsRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section id="skills" className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
-
-
+        <section id="skills" ref={skillsRef} className={`py-16 sm:py-20 md:py-24 relative overflow-hidden transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Heading with animated underline */}
                 <div className="relative text-center mb-16">

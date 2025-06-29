@@ -40,9 +40,14 @@ const Hero = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // Set visibility after component mounts for animations
+    // Fade-in on scroll using Intersection Observer
     useEffect(() => {
-        setIsVisible(true);
+        const observer = new window.IntersectionObserver(
+            ([entry]) => setIsVisible(entry.isIntersecting),
+            { threshold: 0.2 }
+        );
+        if (heroRef.current) observer.observe(heroRef.current);
+        return () => observer.disconnect();
     }, []);
 
     // Typing effect
@@ -105,7 +110,7 @@ const Hero = () => {
         <section
             id="home"
             ref={heroRef}
-            className="min-h-screen flex flex-col justify-center relative overflow-hidden py-6 sm:py-8 md:py-12 lg:py-16"
+            className={`min-h-screen flex flex-col justify-center relative overflow-hidden py-6 sm:py-8 md:py-12 lg:py-16 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
             {/* Full screen particles background */}
             <div className="fixed inset-0 w-screen h-screen overflow-hidden pointer-events-none z-0">
@@ -164,13 +169,13 @@ const Hero = () => {
                         <div className="flex flex-wrap gap-4">
                             <button
                                 onClick={() => scrollToSection('contact')}
-                                className="px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] text-white font-semibold text-sm sm:text-base hover:shadow-lg hover:shadow-steel-500/25 transition-all duration-300 hover:-translate-y-1"
+                                className="px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] text-white font-semibold text-sm sm:text-base hover:shadow-lg hover:shadow-steel-500/25 transition-all duration-300 hover:-translate-y-1 button-animate"
                             >
                                 Let's Talk
                             </button>
                             <button
                                 onClick={() => scrollToSection('work')}
-                                className="px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-white/10 hover:border-white/20 text-white font-semibold text-sm sm:text-base backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                                className="px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-white/10 hover:border-white/20 text-white font-semibold text-sm sm:text-base backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 button-animate"
                             >
                                 View Projects
                             </button>

@@ -134,3 +134,13 @@ body.custom-cursor-enabled label {
   border-color: #fff;
   transform: translate(-50%, -50%) scale(0.9);
 }
+
+/* Add this at the end of the file */
+.button-animate {
+  transition: transform 0.2s cubic-bezier(0.4,0,0.2,1), box-shadow 0.2s cubic-bezier(0.4,0,0.2,1), background 0.2s, color 0.2s;
+}
+.button-animate:hover, .button-animate:focus {
+  transform: scale(1.06) translateY(-2px);
+  box-shadow: 0 8px 24px 0 rgba(25, 118, 210, 0.15), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+  filter: brightness(1.08);
+}
