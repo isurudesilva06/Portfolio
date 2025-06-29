@@ -13,7 +13,7 @@ const Projects = () => {
     const projects = [
         {
             id: 1,
-            title: "Recipe Genie",
+            title: "RECIPE GENIE",
             subtitle: "Your smart kitchen companion.",
             category: "Mobile Development",
             type: "mobile",
@@ -26,7 +26,7 @@ const Projects = () => {
         },
         {
             id: 2,
-            title: "BURGER HOUSE",
+            title: "BUDGET BUDDY",
             subtitle: "Traditional Dhotis",
             category: "E-Commerce",
             type: "uiux",
@@ -42,7 +42,7 @@ const Projects = () => {
             subtitle: "Curate Your Fashion Styles",
             category: "Mobile App",
             type: "uiux",
-            image: "/assets/img/doctor.png",
+            image: "/assets/img/project3.png",
             description: "Fashion curation mobile application with personalized recommendations.",
             technologies: ["Figma", "Adobe Photoshop"],
             liveLink: "#",
@@ -54,7 +54,7 @@ const Projects = () => {
             subtitle: "Online Shopping Platform",
             category: "E-Commerce",
             type: "uiux",
-            image: "/assets/img/project3.png",
+            image: "/assets/img/project4.png",
             description: "Full-featured e-commerce platform with advanced filtering and search.",
             technologies: ["Figma", "Adobe Photoshop"],
             liveLink: "#",

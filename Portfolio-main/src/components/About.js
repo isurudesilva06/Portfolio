@@ -84,7 +84,7 @@ const About = () => {
                         {/* Text content with responsive padding and sizing */}
                         <div className="max-w-full md:max-w-3xl px-4 sm:px-6 md:px-8">
                             <p className="mb-4 sm:mb-6 text-base sm:text-lg">
-                                Hey, I'm <span className="font-bold">Yashindi Bhagya</span>,a final-year BSc (Hons) Computer Science student at NSBM, passionate about building intuitive digital experiences that blend design and functionality.
+                                Hey, I'm <span className="font-bold">Isuru Nipun</span>,A BSc (Hons) Computer Science student at NSBM, passionate about building intuitive digital experiences that blend design and functionality.
                             </p>
 
                             <p className="mb-4 sm:mb-6 text-gray-300 leading-relaxed text-sm sm:text-base">
