@@ -83,7 +83,7 @@ const Contact = () => {
 
             // Prepare email parameters
             const templateParams = {
-                to_email: 'yashindibhagya@gmail.com',
+                to_email: 'silvaisuru9@gmail.com',
                 from_name: formData.name,
                 reply_to: formData.email,
                 subject: formData.subject,
