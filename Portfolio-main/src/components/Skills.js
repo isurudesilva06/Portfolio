@@ -25,7 +25,7 @@ const Skills = () => {
         },
         {
             name: 'Tailwind CSS',
-            iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+            iconUrl: 'https://www.svgrepo.com/show/333609/tailwind-css.svg',
             proficiency: 60
         }
     ];
@@ -53,7 +53,7 @@ const Skills = () => {
         },
         {
             name: 'Cloudinary',
-            iconUrl: 'https://res.cloudinary.com/cloudinary-marketing/image/upload/v1599098500/creative_folder/logo-blue-PDF.png',
+            iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Cloudinary_logo.svg',
             proficiency: 90
         }
     ];
@@ -77,7 +77,7 @@ const Skills = () => {
         },
         {
             name: 'Wix Studio',
-            iconUrl: 'https://static.wixstatic.com/media/9aea63_de2dedcd4ee245fdbdcbe3d9f93d49d0~mv2.png',
+            iconUrl: 'https://static.wixstatic.com/media/11062b_d1b7e6b2e6b84e3e8e6e6e6e6e6e6e6e~mv2.svg',
             proficiency: 90
         },
         {
