@@ -25,7 +25,7 @@ const Skills = () => {
         },
         {
             name: 'Tailwind CSS',
-            iconUrl: 'https://www.svgrepo.com/show/333609/tailwind-css.svg',
+            iconUrl: 'https://www.svgrepo.com/svg/333609/tailwind-css.svg',
             proficiency: 60
         }
     ];
@@ -77,7 +77,7 @@ const Skills = () => {
         },
         {
             name: 'Wix Studio',
-            iconUrl: 'https://static.wixstatic.com/media/11062b_d1b7e6b2e6b84e3e8e6e6e6e6e6e6e6e~mv2.svg',
+            iconUrl: 'https://www.svgrepo.com/svg/374118/file-type-svg.svg',
             proficiency: 90
         },
         {
