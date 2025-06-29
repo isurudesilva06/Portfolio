@@ -15,16 +15,13 @@ const Header = ({ darkMode, toggleDarkMode, activeSection, isProjectPage = false
             setTimeout(() => {
                 const element = document.getElementById(sectionId);
                 if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             }, 100);
         } else {
             const element = document.getElementById(sectionId);
             if (element) {
-                window.scrollTo({
-                    top: element.offsetTop - 60,
-                    behavior: 'smooth',
-                });
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 setIsMenuOpen(false);
             }
         }

@@ -130,24 +130,19 @@ function App() {
           <div className="absolute top-[10%] left-[20%] w-[300px] h-[300px] rounded-full bg-gradient-to-l from-violet-500/15 to-purple-500/10 blur-2xl"></div>
         </div>
 
-        {/* Main content wrapper with consistent max-width */}
+        {/* Main content wrapper restored */}
         <div className="relative z-10">
           <Routes>
             <Route path="/project/:id" element={
               <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-                <Header
-                  activeSection={activeSection}
-                  isProjectPage={true}
-                />
+                <Header activeSection={activeSection} isProjectPage={true} />
                 <ProjectDetails />
                 <Footer />
               </div>
             } />
             <Route path="/" element={
               <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-                <Header
-                  activeSection={activeSection}
-                />
+                <Header activeSection={activeSection} />
                 <Hero />
                 <About />
                 <Services />
