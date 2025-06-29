@@ -53,14 +53,14 @@ const EducationExperience = () => {
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] bg-clip-text text-transparent">
-                        Education & Experience
+                        Education
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                         My academic journey and professional experience in the field of design and development
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-20 max-w-6xl">
+                <div className="w-full max-w-3xl mx-auto">
                     {/* Education Section */}
                     <div className="space-y-8">
                         <h3 className="text-2xl font-bold text-white mb-8">Education</h3>
@@ -105,70 +105,6 @@ const EducationExperience = () => {
                                         <ul className="list-disc list-inside text-gray-400 space-y-2">
                                             <li className="text-sm">
                                                 Excelled in Combined Mathematics stream with a strong foundation in analytical thinking and problem-solving skills.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Experience Section */}
-                    <div className="space-y-8">
-                        <h3 className="text-2xl font-bold text-white mb-8">Experience</h3>
-                        <div className="space-y-12">
-                            {/* Amerck */}
-                            <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b from-[#1a237e] to-[#1976d2]">
-                                <div className="absolute left-0 top-0 w-2 h-2 bg-[#1976d2] rounded-full transform -translate-x-[3px]"></div>
-                                <div className="bg-white/[0.03] backdrop-blur-sm border border-white/10 p-6 rounded-xl">
-                                    <h4 className="text-xl font-semibold text-white mb-2">
-                                        UI/UX Designer
-                                    </h4>
-                                    <p className="text-gray-400 mb-2">
-                                        Amerck
-                                    </p>
-                                    <p className="text-sm text-gray-500">
-                                        2025 May - Present
-                                    </p>
-                                    <div className="mt-4">
-                                        <ul className="list-disc list-inside text-gray-400 space-y-2">
-                                            <li className="text-sm">
-                                                Designed responsive user interfaces for cross-platform web and mobile applications across healthcare.
-                                            </li>
-                                            <li className="text-sm">
-                                                Conducted user research and usability testing to inform design decisions
-                                            </li>
-                                            <li className="text-sm">
-                                                Collaborated with development team to ensure pixel-perfect implementation
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* New Pacific Systems */}
-                            <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b from-[#1a237e] to-[#1976d2]">
-                                <div className="absolute left-0 top-0 w-2 h-2 bg-[#1976d2] rounded-full transform -translate-x-[3px]"></div>
-                                <div className="bg-white/[0.03] backdrop-blur-sm border border-white/10 p-6 rounded-xl">
-                                    <h4 className="text-xl font-semibold text-white mb-2">
-                                        UI/UX Designer
-                                    </h4>
-                                    <p className="text-gray-400 mb-2">
-                                        New Pacific Systems
-                                    </p>
-                                    <p className="text-sm text-gray-500">
-                                        2023 Jan - 2023 Dec
-                                    </p>
-                                    <div className="mt-4">
-                                        <ul className="list-disc list-inside text-gray-400 space-y-2">
-                                            <li className="text-sm">
-                                                Designed responsive web and mobile interfaces for enterprise clients
-                                            </li>
-                                            <li className="text-sm">
-                                                Created and maintained design system documentation
-                                            </li>
-                                            <li className="text-sm">
-                                                Facilitated design workshops and stakeholder presentations
                                             </li>
                                         </ul>
                                     </div>
