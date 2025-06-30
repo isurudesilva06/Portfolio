@@ -66,7 +66,7 @@ const About = () => {
     }, []);
 
     return (
-        <section id="about" ref={aboutRef} className={`min-h-screen text-white relative py-12 md:py-16 lg:py-20 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <section id="about" ref={aboutRef} className={`min-h-screen text-white relative pt-12 md:pt-16 lg:pt-20 pb-0 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {renderDecorationDots()}
 
             <div className="absolute inset-0 pointer-events-none">

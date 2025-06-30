@@ -98,7 +98,13 @@ const ServicesSection = () => {
     }, []);
 
     return (
-        <section id="services" ref={servicesRef} className={`min-h-screen text-white relative overflow-hidden transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ marginTop: -50 }}>
+        <section
+            id="services"
+            ref={servicesRef}
+            className={`min-h-screen text-white relative overflow-hidden transition-all duration-1000 ease-out
+                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-24'}
+            `}
+        >
             {/* Background particles/dots */}
             <div className="absolute inset-0 pointer-events-none">
                 {[...Array(50)].map((_, i) => (
@@ -114,7 +120,7 @@ const ServicesSection = () => {
                 ))}
             </div>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="container mx-auto px-0 relative z-10">
                 {/* Reduced spacing between services: changed from space-y-40 md:space-y-48 to space-y-24 md:space-y-32 */}
                 <div className="space-y-24 md:space-y-32">
                     {services.map((service) => (
