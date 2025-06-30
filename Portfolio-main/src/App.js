@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Services from './components/Services';
 import Education from './components/Education';
+import './App.css';
 
 // Custom Cursor Component
 function CustomCursor() {

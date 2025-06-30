@@ -27,59 +27,61 @@ const Header = ({ darkMode, toggleDarkMode, activeSection, isProjectPage = false
         }
     };
 
-    // Ensure styles default to dark mode even before state initialization
     const bgColor = darkMode !== false ? 'bg-black' : 'bg-white';
     const textColor = darkMode !== false ? 'text-white' : 'text-gray-800';
     const hoverColor = darkMode !== false ? 'hover:text-gray-300' : 'hover:text-gray-600';
 
     return (
-        <header className={`fixed w-full z-50 ${bgColor} shadow-md mt-3 transition-colors duration-300`}>
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
-                    {/* Logo */}
+        <header className={`fixed left-0 z-50 navbar-neon bg-black/60 backdrop-blur-md border-b border-gradient-to-r from-[#bc50ff55] via-[#1976d2aa] to-[#26323855] shadow-2xl mt-3 transition-colors duration-300 navbar-glass w-full`} style={{ boxShadow: '0 8px 32px 0 rgba(30,40,90,0.18)' }}>
+            <div className="px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center h-16">
+                    {/* Logo on the left */}
                     <div className="flex-shrink-0">
-                        <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
+                        <div className="flex items-center cursor-pointer logo-animate" onClick={() => navigate('/')}>
                             <img src="/assets/img/logo 3.png" alt="Yashindi Bhagya" className="h-12 w-auto" />
                         </div>
                     </div>
 
-                    {/* Navigation and Contact Button Container */}
-                    <div className="hidden md:flex items-center space-x-8 flex-1 justify-center">
-                        {/* Navigation */}
+                    {/* Right-aligned Navigation and Contact Button */}
+                    <div className="hidden md:flex items-center space-x-8 ml-auto">
                         <nav className="flex space-x-8">
                             {[
                                 { name: 'Home', section: 'home' },
                                 { name: 'About', section: 'about' },
                                 { name: 'Projects', section: 'work' },
-                            ].map((item) => (
-                                <button
-                                    key={item.name}
-                                    onClick={() => scrollToSection(item.section)}
-                                    className={`px-3 py-2 text-sm font-medium transition-colors duration-200 button-animate \
-                                        ${activeSection === item.section && !isProjectPage
-                                            ? 'bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] bg-clip-text text-transparent'
-                                            : darkMode !== false ? 'text-white hover:text-gray-300' : 'text-gray-800 hover:text-gray-600'
+                            ].map((item) => {
+                                const isActive = activeSection === item.section && !isProjectPage;
+                                return (
+                                    <button
+                                        key={item.name}
+                                        onClick={() => scrollToSection(item.section)}
+                                        style={{ color: '#ffffff !important' }}
+                                        className={`px-3 py-2 text-sm font-medium transition-colors duration-200 button-animate !text-white drop-shadow-[0_1px_8px_rgba(25,118,210,0.7)] ${
+                                            isActive
+                                                ? 'bg-gradient-to-r from-[#22305a] via-[#1976d2] to-[#1a237e] font-bold shadow-[0_2px_16px_0_rgba(25,118,210,0.25)] rounded-lg'
+                                                : 'hover:!text-gray-300'
                                         }`}
-                                >
-                                    {item.name}
-                                </button>
-                            ))}
+                                    >
+                                        <span style={{ color: '#ffffff' }}>{item.name}</span>
+                                    </button>
+                                );
+                            })}
                         </nav>
-
-                        {/* Contact Button - Now part of the centered container */}
                         <button
                             onClick={() => scrollToSection('contact')}
-                            className="px-6 py-2 bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] text-white rounded-full hover:opacity-90 transition-opacity duration-200 font-medium whitespace-nowrap button-animate"
+                            style={{ color: '#ffffff' }}
+                            className="px-6 py-2 bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] !text-white drop-shadow-[0_1px_8px_rgba(25,118,210,0.7)] font-bold rounded-full hover:opacity-90 transition-opacity duration-200 whitespace-nowrap button-animate"
                         >
                             Contact Me
                         </button>
                     </div>
 
-                    {/* Mobile menu button */}
-                    <div className="md:hidden">
+                    {/* Mobile menu button on the right */}
+                    <div className="md:hidden ml-auto">
                         <button
                             onClick={toggleMenu}
-                            className={`inline-flex items-center justify-center p-2 rounded-md ${textColor} ${hoverColor} focus:outline-none button-animate`}
+                            style={{ color: '#ffffff' }}
+                            className="inline-flex items-center justify-center p-2 rounded-md !text-white hover:!text-gray-300 focus:outline-none button-animate"
                         >
                             <svg
                                 className="h-6 w-6"
@@ -109,30 +111,35 @@ const Header = ({ darkMode, toggleDarkMode, activeSection, isProjectPage = false
                 </div>
             </div>
 
-            {/* Mobile menu - Default to dark mode styling */}
+            {/* Mobile Menu */}
             {isMenuOpen && (
-                <div className={`md:hidden ${darkMode !== false ? 'bg-white border-gray-700' : 'bg-gray-100 border-gray-200'} border-t`}>
+                <div className="md:hidden bg-black/90 backdrop-blur-md border-t border-gray-700">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         {[
                             { name: 'Home', section: 'home' },
                             { name: 'About', section: 'about' },
                             { name: 'Projects', section: 'work' },
-                        ].map((item) => (
-                            <button
-                                key={item.name}
-                                onClick={() => scrollToSection(item.section)}
-                                className={`block px-3 py-2 rounded-md text-base font-medium w-full text-center button-animate \
-                                    ${activeSection === item.section && !isProjectPage
-                                        ? 'bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] bg-clip-text text-transparent'
-                                        : darkMode !== false ? 'text-black hover:text-gray-300' : 'text-gray-800 hover:text-gray-600'
+                        ].map((item) => {
+                            const isActive = activeSection === item.section && !isProjectPage;
+                            return (
+                                <button
+                                    key={item.name}
+                                    onClick={() => scrollToSection(item.section)}
+                                    style={{ color: '#ffffff' }}
+                                    className={`block px-3 py-2 rounded-md text-base font-medium w-full text-center button-animate !text-white ${
+                                        isActive
+                                            ? 'bg-gradient-to-r from-[#22305a] via-[#1976d2] to-[#1a237e] font-bold shadow-[0_2px_16px_0_rgba(25,118,210,0.25)] rounded-lg'
+                                            : 'hover:!text-gray-300'
                                     }`}
-                            >
-                                {item.name}
-                            </button>
-                        ))}
+                                >
+                                    <span style={{ color: '#ffffff' }}>{item.name}</span>
+                                </button>
+                            );
+                        })}
                         <button
                             onClick={() => scrollToSection('contact')}
-                            className="block w-full text-center mt-3 px-3 py-2 bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] text-white rounded-full hover:opacity-90 transition-opacity duration-200 font-medium button-animate"
+                            style={{ color: '#ffffff' }}
+                            className="block w-full text-center mt-3 px-3 py-2 bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] !text-white rounded-full hover:opacity-90 transition-opacity duration-200 font-medium button-animate"
                         >
                             Contact Me
                         </button>
