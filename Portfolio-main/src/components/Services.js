@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 
+// Custom styles for icon animation and hover area are in App.css
+
 const ServicesSection = () => {
     // State to track which service is currently being hovered
     const [hoveredService, setHoveredService] = useState(null);
@@ -118,9 +120,12 @@ const ServicesSection = () => {
                     {services.map((service) => (
                         <div
                             key={service.id}
-                            className="relative cursor-pointer group"
+                            className="relative cursor-pointer group hover-trigger"
                             onMouseEnter={() => setHoveredService(service.id)}
                             onMouseLeave={() => setHoveredService(null)}
+                            tabIndex={0} // Make focusable for accessibility
+                            onFocus={() => setHoveredService(service.id)}
+                            onBlur={() => setHoveredService(null)}
                         >
                             <div className="flex flex-col items-center text-center">
                                 {/* Service Number */}
@@ -139,11 +144,11 @@ const ServicesSection = () => {
                                     {hoveredService === service.id && service.tags.map((tag, index) => (
                                         <span
                                             key={index}
-                                            className="absolute px-3 py-1 p-[2px] rounded-lg bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] text-white text-sm rounded-full font-medium flex items-center z-20 transition-all duration-300 animate-fadeIn whitespace-nowrap"
+                                            className="absolute px-3 py-1 p-[2px] rounded-lg bg-gradient-to-r from-[#1a237e] via-[#1976d2] to-[#263238] text-white text-sm rounded-full font-medium flex items-center z-20 transition-all duration-300 animate-fadeIn whitespace-nowrap shadow-lg shadow-[#1976d2]/30"
                                             style={{
                                                 ...tagPositions[tag],
                                                 opacity: 0, // Start with 0 opacity
-                                                animation: `fadeInTag 0.3s ease ${index * 0.1}s forwards` // Custom animation with staggered delay
+                                                animation: `fadeInTag 0.3s ease ${index * 0.1}s forwards`
                                             }}
                                         >
                                             {tag === 'Empathy' && (
@@ -185,9 +190,28 @@ const ServicesSection = () => {
                                     </p>
                                 </div>
 
-                                {/* Icon */}
-                                <div className="w-16 h-16 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 transition-all duration-300 group-hover:border-[#ff58d8] group-hover:text-[#ff58d8] mt-6">
-                                    {service.icon}
+                                {/* Icon with enhanced animation and color theme */}
+                                <div
+                                    className="w-20 h-20 rounded-full border-4 border-transparent flex items-center justify-center text-gray-300 transition-all duration-500 mt-6 relative icon-animate group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#bc50ff]/40 group-focus:scale-110 group-focus:shadow-2xl group-focus:shadow-[#bc50ff]/40"
+                                    style={{
+                                        background: hoveredService === service.id
+                                            ? 'radial-gradient(circle at 60% 40%, #bc50ff 0%, #1976d2 100%)'
+                                            : 'radial-gradient(circle at 60% 40%, #232946 0%, #232946 100%)',
+                                        boxShadow: hoveredService === service.id
+                                            ? '0 0 32px 8px #bc50ff55, 0 0 0 4px #1976d2cc'
+                                            : '0 2px 8px 0 #23294644',
+                                        transition: 'all 0.5s cubic-bezier(.4,2,.3,1)'
+                                    }}
+                                >
+                                    <span className="transition-all duration-500 group-hover:text-white group-focus:text-white">
+                                        {service.icon}
+                                    </span>
+                                    {/* Glowing ring effect */}
+                                    {hoveredService === service.id && (
+                                        <span className="absolute inset-0 rounded-full pointer-events-none animate-pulse-glow" style={{
+                                            boxShadow: '0 0 24px 8px #bc50ff88, 0 0 0 8px #1976d244'
+                                        }}></span>
+                                    )}
                                 </div>
                             </div>
                         </div>

@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+
+/* --- Custom styles for Services section icon animation and hover area --- */
+.hover-trigger {
+  position: relative;
+}
+.hover-trigger:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: transparent;
+  z-index: 1;
+}
+@media (max-width: 640px) {
+  .hover-trigger:before {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 24px 8px #bc50ff88, 0 0 0 8px #1976d244; }
+  50% { box-shadow: 0 0 40px 16px #bc50ffcc, 0 0 0 16px #1976d244; }
+  100% { box-shadow: 0 0 24px 8px #bc50ff88, 0 0 0 8px #1976d244; }
+}
+.animate-pulse-glow {
+  animation: pulseGlow 1.5s infinite;
+}
+
+@keyframes fadeInTag {
+  to { opacity: 1; transform: translateY(-8px) scale(1.05); }
+}
